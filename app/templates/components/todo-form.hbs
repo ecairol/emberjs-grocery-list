@@ -1,0 +1,15 @@
+{{input value=itemName placeholder="Add new item"}}
+<button {{action "addNewItem" itemName}}>+ ADD</button>
+
+<ul class="todo-list">
+  {{#each groceryList as |item|}}
+    <li>
+      <label>
+        {{input type="checkbox" checked=item.done click=(action "markAsDone" item.id)}}
+        {{item.name}}
+      </label>
+    </li>
+  {{/each}}
+</ul>
+
+{{yield}}
