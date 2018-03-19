@@ -14,10 +14,6 @@ export default Ember.Component.extend({
         done: false
       });
       this.set('itemName', '');
-    },
-
-    markAsDone(id) {
-      //console.log(id);
     }
   }
 });

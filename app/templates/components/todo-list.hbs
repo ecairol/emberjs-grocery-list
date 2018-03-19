@@ -1,0 +1,11 @@
+<ul class="todo-list">
+  {{yield}}
+  {{#each items as |item|}}
+    <li>
+      <label>
+        {{input type="checkbox" checked=item.done click=(action "markAsDone" item.id)}}
+        {{item.name}}
+      </label>
+    </li>
+  {{/each}}
+</ul>
