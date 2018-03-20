@@ -6,8 +6,8 @@ export default Ember.Component.extend({
   },
 
   actions: {
-    saveItem(itemName) {
-      this.sendAction('saveItem', itemName);
+    newItem(itemName) {
+      this.sendAction('newItem', itemName);
       this.set('itemName', '');
     }
   }

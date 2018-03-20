@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    saveItem(itemName) {
+    newItem(itemName) {
       let newItem = this.store.createRecord('list-item', {
         name: itemName,
         done: false
