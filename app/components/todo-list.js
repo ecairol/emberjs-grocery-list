@@ -13,6 +13,7 @@ export default Ember.Component.extend({
 
     delete(id) {
       //confirm(`Are you sure you want to delete item #${id}?`);
+      Ember.$(`.id-${id}`).hide();
       this.sendAction('delete', id);
     }
   }

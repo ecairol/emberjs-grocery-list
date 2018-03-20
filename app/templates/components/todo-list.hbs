@@ -1,7 +1,7 @@
 <ul class="todo-list">
   {{yield}}
   {{#each items as |item|}}
-    <li class="item">
+    <li class="item id-{{item.id}}">
       <label>
         {{input type="checkbox" checked=item.done click=(action "markAsDone" item.id)}}
         {{item.name}}
