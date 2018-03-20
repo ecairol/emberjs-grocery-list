@@ -1,6 +1,6 @@
 <fieldset>
   <legend>Grocery List</legend>
-  {{todo-form}}
+  {{todo-form saveItem=(action "saveItem")}}
   {{todo-list items=model}}
   {{outlet}}
 </fieldset>

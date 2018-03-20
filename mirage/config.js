@@ -14,6 +14,10 @@ export default function() {
 
 
   this.get('/list-items');
+  this.post('/list-items');
+  this.get('/list-items/:id');
+  this.patch('/list-items/:id');
+  this.del('/list-items/:id');
 
   /*
     Shorthand cheatsheet:
