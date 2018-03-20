@@ -12,8 +12,8 @@ export default Ember.Component.extend({
     },
 
     delete(id) {
-      confirm(`Are you sure you want to delete item #${id}?`);
-      console.log(id);
+      //confirm(`Are you sure you want to delete item #${id}?`);
+      this.sendAction('delete', id);
     }
   }
 });

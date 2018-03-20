@@ -1,6 +1,6 @@
 <fieldset>
   <legend>Grocery List</legend>
   {{todo-form newItem=(action "newItem")}}
-  {{todo-list items=model}}
+  {{todo-list items=model delete=(action "deleteItem")}}
   {{outlet}}
 </fieldset>

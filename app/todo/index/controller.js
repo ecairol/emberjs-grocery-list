@@ -9,6 +9,14 @@ export default Ember.Controller.extend({
       });
       
       newItem.save();
+    },
+
+    deleteItem(itemId) {
+      this.store
+        .findRecord('list-item', itemId, { backgroundReload: false })
+        .then(function(record) {
+          record.destroyRecord();
+        });
     }
   }
 });
