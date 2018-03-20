@@ -1,10 +1,14 @@
 <ul class="todo-list">
   {{yield}}
   {{#each items as |item|}}
-    <li>
+    <li class="item">
       <label>
         {{input type="checkbox" checked=item.done click=(action "markAsDone" item.id)}}
         {{item.name}}
+        <small class="item__actions">  
+          {{#link-to "todo.edit" item.id}}Edit{{/link-to}}
+          | <a href="#" {{action "delete" item.id}}>Delete</a>
+        </small>
       </label>
     </li>
   {{/each}}

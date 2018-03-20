@@ -1,0 +1,14 @@
+<fieldset>
+  <legend>Edit Item</legend>
+
+  <div>
+    <label for="">
+      Item Name: 
+      {{input value=model.name}}
+    </label>
+  </div>
+
+  <div>
+    <button {{action "editItem" model}}>Save</button>
+  </div>
+</fieldset>

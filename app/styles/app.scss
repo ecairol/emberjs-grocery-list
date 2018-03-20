@@ -44,4 +44,16 @@ button {
   .todo-list {
     margin: 1.5rem 0;
   }
+
+  .item {
+    .item__actions {
+      opacity: 0.1;
+      transition: all 0.3s;
+    }
+
+    &:hover .item__actions {
+      opacity: 1;
+      margin-left: 1rem;
+    }
+  }
 }

@@ -7,7 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('todo');
+  //this.route('todo');
+  this.route('todo', function() {
+    this.route('index', {path: '/'});
+    this.route('edit', {path: ':itemId'});
+  });
 });
 
 export default Router;
