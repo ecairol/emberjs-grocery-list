@@ -3,7 +3,10 @@ import { alias } from '@ember/object/computed';
 
 export default Ember.Component.extend({
 
-  classNameBindings: ['isDone:done'],
+  init() {
+    this._super(...arguments);
+    this.selectAll = false;
+  },
 
   actions: {
     done(id) {
@@ -18,6 +21,14 @@ export default Ember.Component.extend({
 
     bulkDelete() {
       this.sendAction('bulkDelete');
+    },
+
+    toggleSelectAll() {
+      let currentSelectAll = this.get('selectAll');
+      this.items.forEach((item) => {
+        item.set('done', !currentSelectAll);
+      });
+      this.set('selectAll', !currentSelectAll);
     }
   }
 });
