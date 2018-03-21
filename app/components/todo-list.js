@@ -1,14 +1,13 @@
 import Ember from 'ember';
+import { alias } from '@ember/object/computed';
 
 export default Ember.Component.extend({
 
+  classNameBindings: ['isDone:done'],
+
   actions: {
-    markAsDone(id) {
-      console.log(id);
-    },
-    
-    edit(id) {
-      console.log(id);
+    done(id) {
+      this.sendAction('done', id);
     },
 
     delete(id) {

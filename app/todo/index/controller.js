@@ -17,6 +17,15 @@ export default Ember.Controller.extend({
         .then(function(record) {
           record.destroyRecord();
         });
+    },
+    
+    markAsDone(itemId) {
+      this.store
+        .findRecord('list-item', itemId)
+        .then((record) => {
+          record.set('done', true);
+          record.save();
+        });
     }
   }
 });
