@@ -1,11 +1,21 @@
 import Ember from 'ember';
-import { alias } from '@ember/object/computed';
+import { computed } from '@ember/object';
 
 export default Ember.Component.extend({
 
   init() {
     this._super(...arguments);
     this.selectAll = false;
+    this.isBulkDeleteDisabled = true;
+  },
+
+  willRender() {
+    this.set('isBulkDeleteDisabled', true);
+    this.items.forEach((item) => {
+      if (item.get('done')) {
+        this.set('isBulkDeleteDisabled', false);
+      }
+    });
   },
 
   actions: {
