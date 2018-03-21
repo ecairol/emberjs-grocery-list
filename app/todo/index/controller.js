@@ -19,6 +19,15 @@ export default Ember.Controller.extend({
         });
     },
     
+    deleteItems(itemId) {
+      this.store.peekAll('list-item').filter((item) => {
+        if (item.get('done')) {
+          console.log(item.id);
+          item.destroyRecord();
+        }
+       });
+    },
+    
     markAsDone(itemId) {
       this.store
         .findRecord('list-item', itemId)

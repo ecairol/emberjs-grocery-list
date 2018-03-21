@@ -14,6 +14,10 @@ export default Ember.Component.extend({
       //confirm(`Are you sure you want to delete item #${id}?`);
       Ember.$(`.id-${id}`).hide();
       this.sendAction('delete', id);
+    },
+
+    bulkDelete() {
+      this.sendAction('bulkDelete');
     }
   }
 });
