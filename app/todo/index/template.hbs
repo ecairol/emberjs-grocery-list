@@ -1,8 +1,10 @@
 <fieldset>
   <legend>Grocery List</legend>
+  {{search-bar search=(action "search")}}
+  <hr>
   {{todo-form newItem=(action "newItem")}}
   {{todo-list 
-      items=model 
+      items=filtered 
       delete=(action "deleteItem") 
       bulkDelete=(action "deleteItems")
       done=(action "markAsDone")}}
