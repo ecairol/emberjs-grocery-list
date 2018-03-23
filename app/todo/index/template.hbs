@@ -1,6 +1,9 @@
 <fieldset>
   <legend>Grocery List</legend>
-  {{search-bar search=(action "search")}}
+  {{search-bar 
+    keywords=search
+    debounce=100
+    search=(action "search")}}
   <hr>
   {{todo-form newItem=(action "newItem")}}
   {{todo-list 

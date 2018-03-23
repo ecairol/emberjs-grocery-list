@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import { debug } from '@ember/debug';
 
 export default Ember.Controller.extend({
   queryParams: ['search'], 
@@ -12,8 +11,8 @@ export default Ember.Controller.extend({
     if (Ember.isEmpty(search)) { 
       return items; 
     } 
- 
-    return items.filter(function(item) { 
+    
+    return items.filter(function(item) {
       const name = (item.get('name') || '').toLowerCase(); 
       const id = item.id.toLowerCase();
       if (name.match(search) || id.match(search)) { 
@@ -41,10 +40,9 @@ export default Ember.Controller.extend({
         });
     },
     
-    deleteItems(itemId) {
+    deleteItems() {
       this.store.peekAll('list-item').filter((item) => {
         if (item.get('done')) {
-          console.log(item.id);
           item.destroyRecord();
         }
        });
@@ -60,6 +58,7 @@ export default Ember.Controller.extend({
     },
 
     search(keywords) {
+      console.log(keywords);
       this.set('search', keywords);
     }
   }
