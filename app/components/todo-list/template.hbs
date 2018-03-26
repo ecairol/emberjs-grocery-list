@@ -4,10 +4,10 @@
     <li class="item id-{{item.id}} {{if item.done "done"}}">
       <label>
         {{input type="checkbox" checked=item.done click=(action "done" item.id)}}
-        <span>{{item.name}}</span>
+        <span data-test-todo-item="{{item.id}}">{{item.name}}</span>
         <small class="item__actions">  
           {{#unless item.done}}
-            {{#link-to "todo.edit" item.id}}Edit{{/link-to}} | 
+            {{#link-to "todo.edit" item.id data-test-edit-button=item.id}}Edit{{/link-to}} | 
           {{/unless}}
           <a href="#" {{action "delete" item.id}}>Delete</a>
         </small>
