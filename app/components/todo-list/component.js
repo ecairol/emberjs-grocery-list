@@ -3,6 +3,8 @@ import { computed } from '@ember/object';
 
 export default Ember.Component.extend({
 
+  items: [],
+
   init() {
     this._super(...arguments);
     this.selectAll = false;
@@ -11,11 +13,15 @@ export default Ember.Component.extend({
 
   willRender() {
     this.set('isBulkDeleteDisabled', true);
-    this.items.forEach((item) => {
-      if (item.get('done')) {
-        this.set('isBulkDeleteDisabled', false);
-      }
+
+    this.get('items').forEach(item => {
+      console.log(item);
     });
+    // this.items.forEach((item) => {
+    //   if (item.get('done')) {
+    //     this.set('isBulkDeleteDisabled', false);
+    //   }
+    // });
   },
 
   actions: {
